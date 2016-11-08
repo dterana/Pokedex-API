@@ -8,15 +8,15 @@ final class Pokemon: Model {
     var index: String
     var name: String
     var type: String
-    var baseDefense: String
-    var baseAttack: String
-    var height: String
-    var weight: String
-    var evoLvl: String
+    var baseDefense: Int
+    var baseAttack: Int
+    var height: Int
+    var weight: Int
+    var evoLvl: Int
     var evoIndex: String
     
     //Attention - Postgresql field name are only full lowcase
-    init(index: String, name: String, type: String, basedefense: String, baseattack: String, height: String, weight: String, evolvl: String, evoindex: String) {
+    init(index: String, name: String, type: String, basedefense: Int, baseattack: Int, height: Int, weight: Int, evolvl: Int, evoindex: String) {
         self.id = nil
         self.index = index
         self.name = name
@@ -68,11 +68,11 @@ final class Pokemon: Model {
             users.string("index")
             users.string("name")
             users.string("type")
-            users.string("basedefense")
-            users.string("baseattack")
-            users.string("height")
-            users.string("weight")
-            users.string("evolvl")
+            users.int("basedefense")
+            users.int("baseattack")
+            users.int("height")
+            users.int("weight")
+            users.int("evolvl")
             users.string("evoindex")
         }
     }
@@ -82,3 +82,7 @@ final class Pokemon: Model {
         try database.delete("pokemons")
     }
 }
+
+
+
+
