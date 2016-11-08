@@ -1,13 +1,19 @@
 import Vapor
+import VaporPostgreSQL
 
-let drop = Droplet()
 
-drop.get { req in
-    return try drop.view.make("welcome", [
-    	"message": drop.localization[req.lang, "welcome", "title"]
+let drop = Droplet(
+    preparations: [Pokemon.self],
+    providers: [VaporPostgreSQL.Provider.self]
+    
+)
+
+
+drop.get("id", String.self) { request, pokemonId in
+    return try JSON(node: [
+        "index": "\(pokemonId)",
+        "name": "Pikachu"
     ])
 }
-
-drop.resource("posts", PostController())
 
 drop.run()
