@@ -2,11 +2,9 @@ import Vapor
 import VaporPostgreSQL
 
 
-let drop = Droplet(
-    preparations: [Pokemon.self],
-    providers: [VaporPostgreSQL.Provider.self]
-    
-)
+let drop = Droplet()
+try drop.addProvider(VaporPostgreSQL.Provider)
+drop.preparations += Pokemon.self
 
 
 drop.get("api/v0", String.self, String.self) { request, filter, value in
