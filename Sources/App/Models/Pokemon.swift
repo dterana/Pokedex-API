@@ -14,9 +14,10 @@ final class Pokemon: Model {
     var weight: Int
     var evoLvl: Int
     var evoIndex: String
+    var description: String
     
     //Attention - Postgresql field name are only full lowcase
-    init(index: String, name: String, type: String, basedefense: Int, baseattack: Int, height: Int, weight: Int, evolvl: Int, evoindex: String) {
+    init(index: String, name: String, type: String, basedefense: Int, baseattack: Int, height: Int, weight: Int, evolvl: Int, evoindex: String, description: String) {
         self.id = nil
         self.index = index
         self.name = name
@@ -27,6 +28,7 @@ final class Pokemon: Model {
         self.weight = weight
         self.evoLvl = evolvl
         self.evoIndex = evoindex
+        self.description = description
     }
     
     
@@ -42,6 +44,7 @@ final class Pokemon: Model {
         weight = try node.extract("weight")
         evoLvl = try node.extract("evolvl")
         evoIndex = try node.extract("evoindex")
+        description = try node.extract("description")
     }
     
     
@@ -57,8 +60,9 @@ final class Pokemon: Model {
             "height": height,
             "weight": weight,
             "evolvl": evoLvl,
-            "evoindex": evoIndex
-        ])
+            "evoindex": evoIndex,
+            "description": description
+            ])
     }
     
     //Attention - Postgresql field name are only full lowcase
@@ -74,6 +78,7 @@ final class Pokemon: Model {
             users.int("weight")
             users.int("evolvl")
             users.string("evoindex")
+            users.string("description")
         }
     }
     
