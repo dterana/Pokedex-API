@@ -1,10 +1,13 @@
 import Vapor
 import VaporPostgreSQL
+import Fluent
 
 
 let drop = Droplet()
 try drop.addProvider(VaporPostgreSQL.Provider)
 drop.preparations += Pokemon.self
+drop.preparations += Type.self
+drop.preparations += Pokemon_Type.self
 
 
 drop.get("api/v0", String.self, String.self) { request, filter, value in
