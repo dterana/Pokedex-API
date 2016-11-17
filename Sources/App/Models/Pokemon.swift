@@ -1,4 +1,5 @@
 import Vapor
+import Fluent
 
 final class Pokemon: Model {
     
@@ -88,6 +89,10 @@ final class Pokemon: Model {
     }
 }
 
-
+extension Pokemon {
+    func types() throws -> Siblings<Type> {
+        return try siblings()
+    }
+}
 
 
