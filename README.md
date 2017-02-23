@@ -9,7 +9,8 @@ V0 : Display of some basics informations about each of the 718 firsts Pokemons.
 
 ## Configuration
 
-in the folder ***Config***, create a ***secrets*** folder
+In the folder ***Config***, create a ***secrets*** folder
+
 In this folder, create a ***postgresql.json*** file with your personnal datas
 
 ```json
