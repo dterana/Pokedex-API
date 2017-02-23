@@ -7,10 +7,23 @@ V0 : Display of some basics informations about each of the 718 firsts Pokemons.
 - Swift 3.0.1
 - PostgreSQL 9.6.1
 
+## Configuration
 
+in the folder ***Config***, create a ***secrets*** folder
+In this folder, create a ***postgresql.json*** file with your personnal datas
+
+```json
+{
+    "host": {HostAddress},
+    "user": {User},
+    "password": {Password},
+    "database": {DatabaName},
+    "port": {Port}
+}
+```
 ## Requests
 
-### format
+### Format
 
 url/api/{version}/{filter}/{value}
 https://pokedex-vapor.herokuapp.com/api/v0/{filter}/{value}
@@ -18,7 +31,7 @@ https://pokedex-vapor.herokuapp.com/api/v0/{filter}/{value}
 You can make request on 2 attributes: index or name
 
 
-### exemples:
+### Exemples:
 
 [https://pokedex-vapor.herokuapp.com/api/v0/index/002](https://pokedex-vapor.herokuapp.com/api/v0/index/002)
 
