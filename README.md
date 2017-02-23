@@ -1,15 +1,27 @@
-# Basic Template
+# A Pokedex API based on the [vapor framework](https://vapor.codes/)
 
-A basic vapor template for starting a new Vapor web application. If you're using vapor toolbox, you can use: `vapor new --template=basic`
 
-## 📖 Documentation
+V0 : Display of some basics informations about each of the 718 firsts Pokemons.
 
-Visit the Vapor web framework's [documentation](http://docs.vapor.codes) for instructions on how to use this package.
+- Vapor Toolbox v1.0.3
+- Swift 3.0.1
+- PostgreSQL 9.6.1
 
-## 💧 Community
 
-Join the welcoming community of fellow Vapor developers in [slack](http://vapor.team).
+## Requests
 
-## 🔧 Compatibility
+### format
 
-This package has been tested on macOS and Ubuntu.
+url/api/{version}/{filter}/{value}
+https://pokedex-vapor.herokuapp.com/api/v0/{filter}/{value}
+
+You can make request on 2 attributes: index or name
+
+
+### exemples:
+
+[https://pokedex-vapor.herokuapp.com/api/v0/index/002](https://pokedex-vapor.herokuapp.com/api/v0/index/002)
+
+[https://pokedex-vapor.herokuapp.com/api/v0/name/pikachu](https://pokedex-vapor.herokuapp.com/api/v0/name/pikachu)
+
+The API is hosted on a free Heroku account. Due to free account limitations,the first request to the API can take 15-20 secondes (Time for server instance to wake-up).
